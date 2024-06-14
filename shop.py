@@ -1,12 +1,13 @@
-import customer
+import customer, catagory
 import admin
+import uuid
 class Shop:
 	
 	def __init__(self):
 		self.products = []
 		self.orders = []
 		self.customers = []
-		self.admins = []	
+		self.categories = []	
 		
 	def login_admin(self, name, password):
 		admin1 = admin.Admin(name, password)
@@ -21,11 +22,14 @@ class Shop:
 		with open('users.txt','r') as f:
 			lines = f.readlines()
 
-		id = len(lines) + 1
+		id = uuid.uuid4()
 		customer1 = customer.Customer(id, name, password, email, birthdate, address)
 		return customer1.register()
             
-	
+	def add_category(self, name):
+		id = uuid.uuid4()
+		category1 = catagory.Category
+
 
 
 

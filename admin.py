@@ -11,5 +11,5 @@ class Admin:
 			for line in f:
 				if self.name in line and self.password in line:
 					return (f"Dear {self.name} You have signed in successfully!")
-			else:
-				return (f"{self.name} login is not allowed")
+			
+		return (f"{self.name} login is not allowed")
